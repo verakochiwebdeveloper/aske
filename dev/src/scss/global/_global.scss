@@ -83,6 +83,8 @@ ul,li {
 }
 
 .--bg-post-marker {
+	width: 1430px;
+	margin: 0 auto;
 	position: relative;
 	
 	  &::before {
@@ -92,7 +94,7 @@ ul,li {
 		width: 524px;
 		height: 100px;
 		top: -95px;
-		left: 1000px;
+		left: 762px;
 	  }
 }
 

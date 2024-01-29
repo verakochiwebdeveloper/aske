@@ -1,25 +1,12 @@
-*{box-sizing: border-box;}
-
-body {
+.autorization {
     
 }
-
-input:hover {
-    border: 3px solid #F860F5;
-}
-
-input:focus {
-    border: 3px solid #DBFE01;
-    outline: none;
-}
-button:active {
-    background-color: #F860F5;
-}
-
 .container {
     margin: 0 auto;
-    
+    background-color: #000;
     border: 4px solid #000;
+    width: 1430px;
+    
 }
 
 
@@ -56,7 +43,7 @@ button:active {
 
 .header_logo-text {
     color: #000;
-    font-family: Paytone One;
+    font-family: 'Paytone One';
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -81,6 +68,7 @@ button:active {
     align-self: center;
 }
 
+
 @media screen and (width > 744px ){
     .header_list {
         display: flex !important;
@@ -88,7 +76,6 @@ button:active {
 }
 
 .header_list-item {
-    color: #000;
     text-align: center;
     font-family: "Roboto Condensed";
     font-size: 36px;
@@ -96,6 +83,19 @@ button:active {
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
+}
+
+.header_list-link {
+    color: #000;
+}
+
+.header_list-link:hover {
+    color: #DBFE01
+}
+
+.header_list-link:active {
+    background-color: white;
+    color: #DBFE01
 }
 
 .header_list-item:nth-child(5) {
@@ -118,8 +118,19 @@ button:active {
 
 
 .header_burger-img {
+    display: none;
     width: 100%;
     height: 100%;
+    background-color: #F860E8;
+}
+
+
+.header_burger-img.burger-active {
+    display: flex;
+}
+
+.header_list.burger-visible {
+    right: 4px;
 }
 
 @media screen and (width < 1440px ) and (width > 744px){
@@ -170,9 +181,9 @@ button:active {
     }
 
     .header_list {
-        display: none;
-        position: absolute;
-        right: 4px;
+        display: flex;
+        position: fixed;
+        right: -400px;
         top: 37px;
         background: linear-gradient(180deg, #F860E8 0%, #FB6279 50%, #FE6508 100%);
         width: 315px;
@@ -184,6 +195,7 @@ button:active {
         margin: 0;
         border-left: 4px solid #000;
         border-bottom: 4px solid #000;
+        transition: right 0.5s;
     }
 
     .header_list-item {
@@ -215,7 +227,7 @@ button:active {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: -25px auto 0;
+    margin: -38px 0px 0px;
 }
 
 .page_logo {
@@ -249,14 +261,14 @@ button:active {
 }
 
 .page_img {
-    margin: 18px 23px 0px 60px;
+    margin: 0px 23px 0px 60px;
     width: calc(100% - 83px);
     height: 402px;
 }
 
 @media screen and (width < 1440px){
     .page {
-        margin: 24px 0px 0px;
+        margin: 22px 0px 0px;
     }
 
     .page_img {
@@ -335,9 +347,17 @@ button:active {
     line-height: normal;
 }
 
+.account_input:hover {
+    border: 3px solid #DBFE01;
+}
+
+.account_input:focus {
+    border: 3px solid #F860F5;
+    outline: none;
+}
+
 .account_forgot {
     display: flex;
-    color: #FFF;
     font-family: "Roboto";
     font-size: 16px;
     font-style: normal;
@@ -347,11 +367,37 @@ button:active {
     margin: 0px 5px 0px;
 }
 
+.account_forgot-link {
+    color: #FFF;
+}
+
+.account_forgot-link:hover {
+    color: #DBFE01
+}
+
+.account_forgot-link:active {
+    background-color: #DBFE01;
+    color: white
+}
+
+.account_incorrect {
+    display: none;
+    width: 254px;
+    margin: 17px auto 0;
+    color: #F85757;
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
 .account_login {
     width: 100%;
     height: 60px;
     background: #DBFE01;
-    margin: 46px auto 0;
+    margin: 26px auto 0;
     color: #000;
     text-align: center;
     font-family: "Roboto";
@@ -359,11 +405,20 @@ button:active {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    cursor: pointer;
+}
+
+.account_login:hover {
+    background-color: #F860F5;
+}
+
+.account_login:active {
+    border: #F860F5 5px solid;
+    background-color: #DBFE01;
 }
 
 .account_registering {
-    margin: 13px auto 17px;
-    color: #FFF;
+    margin: 8px auto;
     text-align: center;
     font-family: "Roboto";
     font-size: 16px;
@@ -372,14 +427,31 @@ button:active {
     line-height: normal;
 }
 
+.account_registering-link {
+    color: #FFF;
+}
+
+.account_registering-link:hover {
+    color: #DBFE01
+}
+
+.account_registering-link:active {
+    background-color: #DBFE01;
+    color: white
+}
+
 @media screen and (width < 1440px){
     .account {
         width: 438px;
         margin-top: 97px;
     }
 
+    .account_incorrect {
+        margin: 37px auto 0;
+    }
+
     .account_login {
-        margin-top: 76px;
+        margin-top: 50px;
     }
 
     .account_registering {
@@ -401,8 +473,12 @@ button:active {
         font-size: 13px;
     }
 
+    .account_incorrect {
+        margin: 44px auto 0;
+    }
+
     .account_login {
-        margin-top: 141px;
+        margin-top: 61px;
         height: 48px;
         font-size: 16px;
     }

@@ -1,3 +1,4 @@
+/*
 const nowTime = new Date(),
 date = nowTime.getDate(),
 month = nowTime.getMonth(),
@@ -127,4 +128,11 @@ inventDate.textContent = `${date} ${nameMonth[month]}`;
 
 
 
+*/
+let menuBtn = document.querySelector('.menu__burger');
+let menu = document.querySelector('.menu__list');
 
+menuBtn.addEventListener('click', function(){
+	menuBtn.classList.toggle('active');
+	menu.classList.toggle('active');
+})
